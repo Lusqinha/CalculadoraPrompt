@@ -3,11 +3,7 @@ from rich.console import Console
 from rich import print
 
 
-# import numpy as np
-# import matplotlib.pyplot as plt
 
-
-# bhaskara
 def bhaskara():
     a = float(input(f'Qual o valor de A?\n >'))
     b = float(input(f'Qual o valor de B?\n >'))
@@ -22,7 +18,7 @@ def bhaskara():
         print(f'>delta é {delta}\n >X¹ é {x1:.2f} \n >X² é {x2:.2f}')
 
 
-# pitagoras
+
 def pitagoras():
     var1 = input('Qual valor deseja descobrir?\n >H  Hipotenusa\n >CA Cateto Adjacente\n >CO Cateto Oposto\n >>>')
     if var1 == 'H' or var1 == 'h':
@@ -40,12 +36,6 @@ def pitagoras():
         print('Escolha uma opção válida!!! | Você está sendo encaminhado para a tela inicial. ')
         pass
 
-    # elif var1 == 'CA' or var1 == 'ca':
-    #     hip = float(input(f'Qual o valor da Hipotenusa?\n >'))
-    #     co1 = float(input(f'Qual o valor do Cateto Oposto?\n >'))
-    #     ca1 = ()
-
-    # F = M.A
 
 
 def calculoA():
@@ -112,20 +102,9 @@ def operacoesbasicas():
         divisao()
 
 
-# função de 2°
-# função quadratica
 
-# Cores
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+
+
 
 
 # Loop Principal
@@ -171,4 +150,4 @@ while calcular:
     elif escolha == 'x' or escolha == 'X':
         calcular = False
     else:
-        print('escolha uma opção válida!!!'.format())
+        print(f'escolha uma opção válida!!!')
