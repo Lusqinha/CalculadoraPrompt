@@ -105,40 +105,43 @@ def operacoesbasicas():
 
 # Seno
 def sencostan():
-    an = float(input(f'Insira o valor do ângulo.\n >>>'))
-    console1 = Console()
-    table2 = Table(title="Seno, Cosseno ou Tangente?", title_justify='center')
-    table2.add_column('Seno', justify='center')
-    table2.add_column('Cosseno', justify='center')
-    table2.add_column('Tangente', justify='center')
-    table2.add_row('sen', 'cos', 'tan')
-    console1.print(table2)
-    es = str(input('>>>'))
-
-    if es == 'sen' or es == 'Sen':
-        try:
-            Vr1 = sin(radians(an))
-        except (ZeroDivisionError, ValueError, SyntaxError):
-            print("Não foi possível obter qualquer resultado.")
-        else:
-            print(f"O Seno de {an} é {Vr1:.4f}")
-    elif es == 'cos' or es == 'Cos':
-        try:
-            Vr2 = cos(radians(an))
-        except(ZeroDivisionError, ValueError, SyntaxError):
-            print("Não foi possível obter qualquer resultado.")
-        else:
-            print(f"O Cosseno de {an} é {Vr2:.4f}")
-    elif es == 'tan' or es == 'Tan':
-        try:
-            Vr3 = tan(radians(an))
-        except (ZeroDivisionError, ValueError, SyntaxError):
-            print("Não foi possível obter qualquer resultado.")
-        else:
-            print(f"A Tangente de {an} é {Vr3:.4f}")
+    try:
+        an = float(input(f'Insira o valor do ângulo.\n >>>'))
+    except (ZeroDivisionError, ValueError, SyntaxError):
+        print(f'Não foi possível obter qualquer resultado.')
     else:
-        print("Opção inválida!")
-        pass
+        console1 = Console()
+        table2 = Table(title="Seno, Cosseno ou Tangente?", title_justify='center')
+        table2.add_column('Seno', justify='center')
+        table2.add_column('Cosseno', justify='center')
+        table2.add_column('Tangente', justify='center')
+        table2.add_row('sen', 'cos', 'tan')
+        console1.print(table2)
+        es = str(input('>>>'))
+        if es == 'sen' or es == 'Sen':
+            try:
+                Vr1 = sin(radians(an))
+            except (ZeroDivisionError, ValueError, SyntaxError):
+                print("Não foi possível obter qualquer resultado.")
+            else:
+                print(f"O Seno de {an} é {Vr1:.4f}")
+        elif es == 'cos' or es == 'Cos':
+            try:
+                Vr2 = cos(radians(an))
+            except(ZeroDivisionError, ValueError, SyntaxError):
+                print("Não foi possível obter qualquer resultado.")
+            else:
+                print(f"O Cosseno de {an} é {Vr2:.4f}")
+        elif es == 'tan' or es == 'Tan':
+            try:
+                Vr3 = tan(radians(an))
+            except (ZeroDivisionError, ValueError, SyntaxError):
+                print("Não foi possível obter qualquer resultado.")
+            else:
+                print(f"A Tangente de {an} é {Vr3:.4f}")
+        else:
+            print("Opção inválida!")
+            pass
 
 
 # Loop Principal
