@@ -3,7 +3,7 @@ from rich.console import Console
 from rich import print
 
 
-
+# bhaskara
 def bhaskara():
     a = float(input(f'Qual o valor de A?\n >'))
     b = float(input(f'Qual o valor de B?\n >'))
@@ -18,7 +18,7 @@ def bhaskara():
         print(f'>delta é {delta}\n >X¹ é {x1:.2f} \n >X² é {x2:.2f}')
 
 
-
+# pitagoras
 def pitagoras():
     var1 = input('Qual valor deseja descobrir?\n >H  Hipotenusa\n >CA Cateto Adjacente\n >CO Cateto Oposto\n >>>')
     if var1 == 'H' or var1 == 'h':
@@ -35,7 +35,6 @@ def pitagoras():
     else:
         print('Escolha uma opção válida!!! | Você está sendo encaminhado para a tela inicial. ')
         pass
-
 
 
 def calculoA():
@@ -102,25 +101,19 @@ def operacoesbasicas():
         divisao()
 
 
-
-
-
-
-
 # Loop Principal
 calcular = True
 while calcular:
     console = Console()
-    table = Table(title="Calculadora em Python")
+    table = Table(title="Calculadora em Python", title_justify='center')
     table.add_column('Bhaskara', justify='center')
     table.add_column('Teorema de Pitágoras', justify='center')
     table.add_column('Aceleração da Gravidade', justify='center')
     table.add_column('Operações básicas', justify='center')
     table.add_column('Fechar', justify='center', style='red')
     table.add_row('1', '2', '3', '4', 'X')
-
     console.print(table)
-    escolha = int(input(f'Olá! Gostaria de usar qual de nossas calculadoras? \n >>>'))
+    escolha = int(input('>>>'))
     if escolha == 1:
         bhaskara()
     elif escolha == 2:
@@ -150,4 +143,4 @@ while calcular:
     elif escolha == 'x' or escolha == 'X':
         calcular = False
     else:
-        print(f'escolha uma opção válida!!!')
+        print('escolha uma opção válida!!!'.format())
