@@ -21,7 +21,8 @@ def bhaskara():
 
 # Hipotenusa
 def hipotenusa():
-    ca, co = float(input("Insira o valor do Cateto Adjacente e do Cateto Oposto respectivamente.\n >>>"))
+    ca = float(input(f"Insira o valor do Cateto Adjacente.\n >>>"))
+    co = float(input(f"Insira o valor do Cateto Oposto.\n >>>"))
     try:
         Hipotenusa = hypot(ca, co)
     except (ValueError, ZeroDivisionError, SyntaxError):
