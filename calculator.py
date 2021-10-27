@@ -1,6 +1,7 @@
 from rich.table import Table
 from rich.console import Console
 from rich import print
+from art import tprint
 from math import sin, cos, tan, radians, hypot
 
 
@@ -144,12 +145,16 @@ def sencostan():
             pass
 
 
+# Texto de inicialização
+tprint("Calculadora")
+tprint("Em Python")
+
 # Loop Principal
 calcular = True
 while calcular:
     # Criando Interface no Prompt de comando
     console = Console()
-    table = Table(title="Calculadora em Python", title_justify='center')
+    table = Table(title="", title_justify='center')
     table.add_column('Bhaskara', justify='center')
     table.add_column('Hipotenusa', justify='center')
     table.add_column('Segunda Lei de Newton', justify='center')
