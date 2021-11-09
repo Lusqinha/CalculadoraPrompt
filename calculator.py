@@ -32,6 +32,73 @@ def hipotenusa():
         print(f'A hipotenusa de {co}(Co) e {ca}(Ca) é {Hipotenusa}')
 
 
+# conversor de medidas
+def conversor():
+    cv_console = Console()
+    cv_table = Table(title='Qual medida você deseja converter?', title_justify='center')
+    cv_table.add_column('Velocidade', justify='center')
+    cv_table.add_column('Peso', justify='center')
+    cv_table.add_row('V', 'P')
+    cv_console.print(cv_table)
+    cv_opt = str(input('>>>'))
+    try:
+        if cv_opt == 'V' or cv_opt == 'v':
+            cv_velo = Table(title='Qual é a notação do valor original?', title_justify='center')
+            cv_velo.add_column('m/s', justify='center')
+            cv_velo.add_column('Km/h', justify='center')
+            cv_velo.add_row('m', 'k')
+            cv_console.print(cv_velo)
+            cv_velo_opt = input('>>>')
+            if cv_velo_opt == 'm' or cv_velo_opt == 'M':
+                m_velo = float(input('Insira a velocidade \n >'))
+                r_velo = m_velo * 3.6
+                print(f'A velocidade convertida é de {r_velo:.3f}Km/h')
+            elif cv_velo_opt == 'k' or cv_velo_opt == 'K':
+                k_velo = float(input('Insira a velocidade \n >'))
+                rk_velo = k_velo / 3.6
+                print(f'A velocidade convertida é de {rk_velo:.3f}m/s')
+            else:
+                print('Em manutenção!')
+        elif cv_opt == 'P' or cv_opt == 'p':
+            pass
+    except(ZeroDivisionError, ValueError, SyntaxError):
+        print('Erro! Tente novamente')
+    else:
+        pass
+
+
+# Energia cinética Ec = (m*v²)/2
+def energiacinetica():
+    console_ec = Console()
+    ec_table = Table(title="Energia Cinética", title_justify='center')
+    ec_table.add_column('Energia cinética', justify='center')
+    ec_table.add_column('Massa', justify='center')
+    ec_table.add_column('Velocidade', justify='center')
+    ec_table.add_row('Ec', 'M', 'V')
+    console_ec.print(ec_table)
+    try:
+        opt = str(input('Qual variavél você deseja encontrar?\n >>>'))
+        if opt == 'Ec' or opt == 'ec' or opt == 'EC':
+            m = float(input('Insira o valor da massa em Kg \n >'))
+            v = float(input('Insira o valor da velocidade m/s \n >'))
+            ec = (m * v ** 2) / 2
+            print(f'A energia cinética é de {ec:.3f} J')
+        elif opt == 'M' or opt == 'm':
+            Ec = float(input('Insira o valor da energia cinética em J \n >'))
+            v = float(input('Insira o valor da velocidade m/s \n >'))
+            print('Em manutenção!')
+            pass
+        if opt == 'V' or opt == 'v':
+            Ec = float(input('Insira o valor da energia cinética em J \n >'))
+            m = float(input('Insira o valor da massa em Kg \n >'))
+            print('Em manutenção!')
+            pass
+    except (ZeroDivisionError, ValueError, SyntaxError):
+        print('Erro! Verifique se foi respondido devidamente.')
+    else:
+        pass
+
+
 # 2° lei de Newton: Valor de A
 def calculoA():
     F = float(input(f'insira o valor de F \n >>>'))
@@ -160,8 +227,10 @@ while calcular:
     table.add_column('Segunda Lei de Newton', justify='center')
     table.add_column('Operações básicas', justify='center')
     table.add_column('Seno, Cosseno e Tangente', justify='center')
+    table.add_column('Energia cinética', justify='center')
+    table.add_column('Conversor de medidas', justify='center')
     table.add_column('Fechar', justify='center', style='red')
-    table.add_row('1', '2', '3', '4', '5', '0')
+    table.add_row('1', '2', '3', '4', '5', '6', '7', '0')
     console.print(table)
     # Opções da calculadora
     escolha = int(input('>>>'))
@@ -193,6 +262,10 @@ while calcular:
         operacoesbasicas()
     elif escolha == 5:
         sencostan()
+    elif escolha == 6:
+        energiacinetica()
+    elif escolha == 7:
+        conversor()
     elif escolha == 0:
         calcular = False
     else:
