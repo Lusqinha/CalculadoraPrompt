@@ -43,7 +43,7 @@ def conversor():
     cv_opt = str(input('>>>'))
     try:
         if cv_opt == 'V' or cv_opt == 'v':
-            cv_velo = Table(title='Qual é a notação do valor original?', title_justify='center')
+            cv_velo = Table(title='Qual é a unidade do valor original?', title_justify='center')
             cv_velo.add_column('m/s', justify='center')
             cv_velo.add_column('Km/h', justify='center')
             cv_velo.add_row('m', 'k')
@@ -54,13 +54,26 @@ def conversor():
                 r_velo = m_velo * 3.6
                 print(f'A velocidade convertida é de {r_velo:.3f}Km/h')
             elif cv_velo_opt == 'k' or cv_velo_opt == 'K':
-                k_velo = float(input('Insira a velocidade \n >'))
+                k_velo = float(input('fInsira a velocidade \n >'))
                 rk_velo = k_velo / 3.6
                 print(f'A velocidade convertida é de {rk_velo:.3f}m/s')
             else:
-                print('Em manutenção!')
+                pass
         elif cv_opt == 'P' or cv_opt == 'p':
-            pass
+            cv_peso = Table(title='Qual a unidade do valor original?', title_justify='center')
+            cv_peso.add_column('Quilograma', justify='center')
+            cv_peso.add_column('Grama', justify='center')
+            cv_peso.add_row('kg', 'g')
+            cv_console.print(cv_peso)
+            cv_peso_opt = input('>>>')
+            if cv_peso_opt == 'Kg' or cv_peso_opt == 'kg':
+                pesokg = float(input(f'Insira o valor do peso \n >'))
+                r_pesokg = pesokg * (10 ** 3)
+                print(f'O valor após a conversão é de {r_pesokg}g')
+            elif cv_peso_opt == 'g' or cv_peso_opt == 'G':
+                pesog = float(input(f'Insira o valor do peso \n >'))
+                r_pesog = pesog * (10 ** -3)
+                print(f'O valor após a conversão é de {r_pesog}Kg')
     except(ZeroDivisionError, ValueError, SyntaxError):
         print('Erro! Tente novamente')
     else:
@@ -120,7 +133,7 @@ def calculoM():
     F2 = float(input(f'insira o valor de F \n >>>'))
     A2 = float(input(f'insira o valor de A \n >>>'))
     M2 = F2 / A2
-    print(f'O valor de massa é [green]{M2}[/]Kg.')
+    print(f'O valor de massa é {M2}Kg.')
 
 
 # Operações básicas: Multiplicação
